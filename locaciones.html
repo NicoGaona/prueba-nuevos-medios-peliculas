@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios" />
+        <title>DNO037</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <p><a href="index.html">Portada</a> <a href="peliculas.html">Películas</a> <a href="locaciones.html" class="active">Locaciones</a> <a href="ganancias.html">Ganancias</a></p>
+            </nav>
+            <main>
+                <div id="mapa">
+                    <!--acá se mete el mapa-->
+                </div>
+            </main>
+            <footer>
+                <p><a href="https://github.com/NicoGaona">Nicolás Gaona</a> <a href="https://github.com/profesorfaco/dno037-2022">DNO037</a></p>
+            </footer>
+        </div>
+<script>
+    var mymap = L.map('mapa').setView([37.89053297345334, -99.903628190858], 5);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        id: 'mapbox/dark-v10',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+    L.marker([41.116667, -73.666667]).addTo(mymap).bindPopup("<b>Blue Sky Studios</b>. Blue Sky Studios fue un estudio de animación CGI especializado en la animación de personajes generada por ordenador con sede en Greenwich, Connecticut.");
+    L.marker([34.055380, -118.413341]).addTo(mymap).bindPopup("<b>Twentieth Century Fox Home Entertainment</b>. 20th Century Studios Home Entertainment es la unidad de video doméstico del estudio de cine 20th Century Studios, ahora una subsidaria de Walt Disney Studios Home Entertainment.");
+    L.marker([40.71384144421498, -74.011931445207]).addTo(mymap).bindPopup("<b>Broadcast Music, Inc.</b>. Sede principal de la compañía BMI, esta le otorgó el premio BMI Film & TV Awards de mejor banda sonora a La Era del Hielo 1");
+</script>
+    </body>
+</html>
