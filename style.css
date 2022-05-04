@@ -75,6 +75,7 @@ header div{
 }
 
 header div h1{
+    font-family: "Georgia";
     font-size:calc(1.5rem + 1vw);
     line-height: 1;
     text-shadow: 0 0 2px var(--fondo);
